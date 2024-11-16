@@ -26,7 +26,7 @@ def quick_sort(arr):
 
 
 if __name__ == '__main__':
-    array = [randint(0, 100) for i in range(10000)]
+    array = [randint(0, 100) for i in range(1_000_000)]
 
     print(timeit(partial(bubble_sort, array), number=1))
     print(timeit(partial(quick_sort, array), number=1))
