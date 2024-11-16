@@ -1,6 +1,5 @@
-from timeit import timeit
+from time import time
 from random import randint
-from functools import partial
 
 
 def bubble_sort(arr):
@@ -28,9 +27,14 @@ def quick_sort(arr):
 if __name__ == '__main__':
     array = [randint(0, 100) for i in range(1_000_000)]
 
-    print(timeit(partial(bubble_sort, array), number=1))
-    print(timeit(partial(quick_sort, array), number=1))
-    print(timeit(partial(sorted, array), number=1))
-    
-    assert bubble_sort(array) == sorted(array)
-    assert quick_sort(array) == sorted(array)
+    start = time()
+    bubble_sort(array)
+    print(time() - start)  # 600 сек
+
+    start = time()
+    quick_sort(array)
+    print(time() - start)  # 0.8 сек
+
+    start = time()
+    sorted(array)
+    print(time() - start)  # 0.09 сек
