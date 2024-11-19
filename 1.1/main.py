@@ -1,7 +1,5 @@
-def main():
+def main(b, c):
     a = int(input())
-    b = 200
-    c = 100
     m = a
     if b > m:
         m = b
@@ -11,4 +9,4 @@ def main():
 
 
 if __name__ == '__main__':
-    print(main())
+    print(main(200, 100))
